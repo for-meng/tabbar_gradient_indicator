@@ -1,4 +1,5 @@
 # Tabbar gradient indicator
+a custom tabbar gradient indicator for flutter, and it support ios and android
 
 ## Screenshots
 
