@@ -1,5 +1,10 @@
 # Tabbar gradient indicator
 
+## Screenshots
+
+![image](https://raw.githubusercontent.com/for-meng/tabbar_gradient_indicator/main/images/example.jpg)
+
+
 ## Getting Started
 
 1. Depend on it by adding this to your pubspec.yaml file: ```tabbar_gradient_indicator: ^0.0.1```
