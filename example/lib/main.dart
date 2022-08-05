@@ -8,7 +8,6 @@ void main() {
 class MyApp extends StatelessWidget{
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     List list = ["title - 1 - 1", "title - 1 - 2"];
@@ -20,10 +19,10 @@ class MyApp extends StatelessWidget{
             builder: (context) => Scaffold(
               appBar: AppBar(
                 backgroundColor: Colors.white,
-                elevation: 0, //去掉Appbar底部阴影
+                elevation: 0,
                 title: const Text("tabbar gradient indicator"),
                 bottom: PreferredSize(
-                  preferredSize: const Size(double.infinity, 40), //调整高度
+                  preferredSize: const Size(double.infinity, 40),
                   child: TabBar(
                     enableFeedback: true,
                     tabs: list.map((e) => Tab(text: e)).toList(),
@@ -37,7 +36,6 @@ class MyApp extends StatelessWidget{
                 ),
               ),
               body: TabBarView(
-                //构建
                   children: list.map((e) {
                     return Center(child: Text(e));
                   }).toList()),
