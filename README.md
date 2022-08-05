@@ -8,7 +8,7 @@ a custom tabbar gradient indicator for flutter, and it support ios and android
 
 ## Getting Started
 
-1. Depend on it by adding this to your pubspec.yaml file: ```tabbar_gradient_indicator: ^0.0.1```
+1. Depend on it by adding this to your pubspec.yaml file: ```tabbar_gradient_indicator: ^1.0.0```
 
 2. Import it: ```import 'package:tabbar_gradient_indicator/tabbar_gradient_indicator.dart'```
 
