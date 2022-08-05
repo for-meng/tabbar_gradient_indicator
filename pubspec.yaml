@@ -1,6 +1,6 @@
 name: tabbar_gradient_indicator
 description: A Flutter tabbar gradient indicator. Writted with pure dart, supported both iOS and Android.
-version: 0.0.1
+version: 1.0.0
 homepage: https://github.com/for-meng/tabbar_gradient_indicator
 
 environment:
