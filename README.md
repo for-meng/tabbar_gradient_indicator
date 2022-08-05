@@ -15,7 +15,7 @@ a custom tabbar gradient indicator for flutter, and it support ios and android
 3. set the **indicator** property of Tabbar like this:
 ````dart
 TabBar(indicator: TabBarGradientIndicator(
-gradientColor: [Color(0xff579CFA) , Color(0xff2FDEE7)],
-indicatorWidth: 2)
+            gradientColor: [Color(0xff579CFA) , Color(0xff2FDEE7)],
+            indicatorWidth: 2)
 )
 ````
