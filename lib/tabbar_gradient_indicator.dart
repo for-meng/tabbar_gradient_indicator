@@ -7,9 +7,9 @@ import 'dart:ui' as ui;
 class TabBarGradientIndicator extends Decoration {
   const TabBarGradientIndicator(
       {this.borderSide = const BorderSide(width: 2.0, color: Colors.white),
-        this.insets = EdgeInsets.zero,
-        this.indicatorWidth = 2,
-        this.gradientColor});
+      this.insets = EdgeInsets.zero,
+      this.indicatorWidth = 2,
+      this.gradientColor});
 
   final List<Color>? gradientColor;
   final BorderSide borderSide;
@@ -41,19 +41,22 @@ class TabBarGradientIndicator extends Decoration {
     return super.lerpTo(b, t);
   }
 
-
   @override
   BoxPainter createBoxPainter([VoidCallback? onChanged]) {
-    return _UnderlinePainter(decoration: this, gradientColor: gradientColor , indicatorWidth : indicatorWidth , onChanged: onChanged);
+    return _UnderlinePainter(
+        decoration: this,
+        gradientColor: gradientColor,
+        indicatorWidth: indicatorWidth,
+        onChanged: onChanged);
   }
 }
 
 class _UnderlinePainter extends BoxPainter {
-  _UnderlinePainter({
-    required this.decoration,
-    VoidCallback? onChanged,
-    this.gradientColor ,
-    this.indicatorWidth = 2})
+  _UnderlinePainter(
+      {required this.decoration,
+      VoidCallback? onChanged,
+      this.gradientColor,
+      this.indicatorWidth = 2})
       : super(onChanged);
 
   final double indicatorWidth;
@@ -66,8 +69,14 @@ class _UnderlinePainter extends BoxPainter {
   void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
     assert(configuration.size != null);
 
-    final Rect rect = offset & insets.deflateSize((configuration.size ?? Size(indicatorWidth, indicatorWidth)));
-    Rect myRect = Rect.fromLTWH(rect.left, rect.bottom - indicatorWidth * 0.5 - 1, rect.width, indicatorWidth * 0.5);
+    final Rect rect = offset &
+        insets.deflateSize(
+            (configuration.size ?? Size(indicatorWidth, indicatorWidth)));
+    Rect myRect = Rect.fromLTWH(
+        rect.left,
+        rect.bottom - indicatorWidth * 0.5 - 1,
+        rect.width,
+        indicatorWidth * 0.5);
 
     final Paint paint = borderSide.toPaint()
       ..strokeWidth = indicatorWidth * 0.5
@@ -76,6 +85,7 @@ class _UnderlinePainter extends BoxPainter {
           Offset(myRect.left, 0), Offset(myRect.right, 0), gradientColor ?? []);
 
     canvas.drawRRect(
-        RRect.fromRectAndRadius(myRect, Radius.circular(indicatorWidth * 0.25)), paint);
+        RRect.fromRectAndRadius(myRect, Radius.circular(indicatorWidth * 0.25)),
+        paint);
   }
 }
